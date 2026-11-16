@@ -128,6 +128,9 @@
 		.esp-two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 		.esp-two .img-slot{aspect-ratio:4/3}
 		.esp-two.rev .col-img{order:2}
+		/* Imagen completa: sin recorte, respeta la proporción original de la foto */
+		.esp-two .img-slot.img-completa{aspect-ratio:auto;min-height:220px;max-width:460px;margin:0 auto}
+		.img-slot.img-completa img{position:relative;inset:auto;z-index:2;display:block;width:100%;height:auto;object-fit:contain}
 		.esp-checks{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px}
 		.esp-checks li{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--borde);border-radius:10px;padding:14px 16px;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4}
 		.esp-checks .ico{flex:0 0 34px;height:34px;border-radius:50%;background:var(--beige);color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:15px}
@@ -141,6 +144,7 @@
 		@media (max-width:991px){
 			.esp-two,.esp-estudios{grid-template-columns:1fr;gap:30px}
 			.esp-two.rev .col-img{order:0}
+			.esp-two .img-slot.img-completa{max-width:400px}
 			.esp-estudios .img-slot{aspect-ratio:4/3}
 		}
 
@@ -246,7 +250,7 @@
 						<p class="esp-text">DentCo Radiodiagnóstico es un centro especializado en estudios de imagen dental que brinda apoyo a pacientes y odontólogos mediante tecnología digital, facilitando el diagnóstico y la planificación de tratamientos.</p>
 					</div>
 					<div class="col-img">
-						<div class="img-slot">
+						<div class="img-slot img-completa">
 						<img src="img/especialidades/Radio/estudios%20dentales-tegucigalpa-dentco.png" alt="Foto del centro de radiodiagnóstico" loading="lazy" onerror="this.style.display='none'">
 						<div class="slot-label"><i class="fa fa-picture-o" aria-hidden="true"></i>Foto del centro de radiodiagnóstico<small>Horizontal 4:3 · 1200×900 px<br>img/especialidades/RADIODIAGN%C3%93STICO/QUE%20ES%20DENTCO%20RADIODIAGN%C3%93STICO/estudios%20dentales-tegucigalpa-dentco.png</small></div>
 					</div>
@@ -265,7 +269,7 @@
 				<ul class="esp-lista cards">
 					<li><span class="ico"><i class="fa fa-cube" aria-hidden="true"></i></span><div><h3>Tomografía CBCT</h3><p>Imágenes tridimensionales que permiten evaluar las estructuras dentales y maxilofaciales.</p></div></li>
 					<li><span class="ico"><i class="fa fa-arrows-h" aria-hidden="true"></i></span><div><h3>Radiografía panorámica</h3><p>Vista general de los dientes, maxilares y estructuras relacionadas en una sola imagen.</p></div></li>
-					<li><span class="ico"><i class="fa fa-user-o" aria-hidden="true"></i></span><div><h3>Lateral de cráneo</h3><p>Radiografía utilizada principalmente para evaluaciones ortodóncicas.</p></div></li>
+					<li><span class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 21v-3.2C5.6 16.4 4.5 14 4.5 11.3 4.5 7.1 7.8 3.5 12.2 3.5c3.6 0 6.3 2.3 6.9 5.4l1.4 2.8c.2.4-.1.8-.5.8H19v2.2c0 .6-.5 1-1 1h-1.3V19c0 1.1-.9 2-2 2H8z"/></svg></span><div><h3>Lateral de cráneo</h3><p>Radiografía utilizada principalmente para evaluaciones ortodóncicas.</p></div></li>
 					<li><span class="ico"><i class="fa fa-crosshairs" aria-hidden="true"></i></span><div><h3>Cefalometría</h3><p>Análisis de medidas craneofaciales que contribuye a la planificación de tratamientos de ortodoncia.</p></div></li>
 					<li><span class="ico"><i class="fa fa-desktop" aria-hidden="true"></i></span><div><h3>Escaneo de modelos</h3><p>Digitalización de modelos dentales para facilitar su evaluación y planificación.</p></div></li>
 				</ul>
