@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+		<!-- ==============================================
+		TITLE AND META TAGS
+		=============================================== -->
+		<title>Dental Company HN | Tegucigalpa y Comayagua</title>
+        <meta name="description" content="En DentCo reunimos atención especializada, tecnología y servicios complementarios para acompañarte en el cuidado de tu salud dental.">
+        <meta name="keywords" content="odontologia, dentista, tegucigalpa, comayagua, dentco, clinica dental">
+        <meta name="author" content="Quickdev">
+
+		<!-- ==============================================
+		FAVICON
+		=============================================== -->  
+        <link rel="shortcut icon" href="img/master/favicon.png">
+             
+		<!-- ==============================================
+		CSS
+		=============================================== -->  
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+		
+		<style>
+		/* Fix: evita que se superpongan los títulos de todos los slides */
+		.slider-item .slider-text{opacity:0;visibility:hidden;transition:opacity .6s ease}
+		.slider-item.is-active .slider-text{opacity:1;visibility:visible}
+		.main-slider,.main-slider .slider,.main-slider .slider__container,.main-slider .slider-item,.main-slider .slider-image{height:calc(100vh - 125px) !important;min-height:420px}
+		.sr-only-hero{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0}
+		.slider-image.hero-vertical{position:relative;overflow:hidden;background:#1c2a48 !important}
+		.slider-image.hero-vertical::before{content:"";position:absolute;top:-30px;right:-30px;bottom:-30px;left:-30px;background:url(img/clinica/clinica1.jpeg) center/cover no-repeat;filter:blur(28px) brightness(.75)}
+		.slider-image.hero-vertical::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:url(img/clinica/clinica1.jpeg) center/contain no-repeat}
+
+		/* Paleta del cliente: beige #F8F5EF, blanco y gris claro #F5F7F9 */
+		:root{--bg-beige:#F8F5EF;--bg-gris:#F5F7F9;--bg-blanco:#FFFFFF}
+		body{background-color:var(--bg-blanco)}
+		.wrapper .main{background-color:var(--bg-blanco)}
+		.wrapper .main.colored{background-color:var(--bg-beige)}
+
+		/* Sección Encuéntranos: pestañas + mapas */
+		.sedes-tabs{display:flex;justify-content:flex-start;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+		.sedes-tab{border:1px solid #ece6da;background:#F8F5EF;color:#1c2a48;font-weight:700;font-size:14px;padding:10px 22px;font-family:inherit;border-radius:6px;cursor:pointer;transition:all .2s ease}
+		.sedes-tab:hover{background:#efe9dc}
+		.sedes-tab.is-active{background:#2b59c3;border-color:#2b59c3;color:#fff}
+		.sedes-card{margin:0;border:1px solid #ece6da;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+		.sedes-info{background:#F8F5EF;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+		.sedes-info p{margin:0;font-size:14px;color:#4f5b6d;line-height:1.5}
+		.sedes-info strong{color:#1c2a48;margin-right:6px}
+		.sedes-links a{display:inline-block;margin-left:0;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;background:#2b59c3;color:#fff}
+		.sedes-links a.sec{background:#fff;color:#2b59c3;border:1px solid #2b59c3}
+		.sedes-map{display:none}
+		.sedes-map.is-active{display:block}
+		.sedes-map iframe{display:block;width:100%;height:320px;border:0}
+		@media (max-width:600px){.sedes-map iframe{height:280px}}
+		</style>
+	</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+</div>
+<!-- LOADER -->
+	
+	<!-- MAIN CONTAINER -->
+	<div class="wrapper">
+		<div class="header">
+			<div class="navbar">
+				<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+					  <div class="top-header">
+						  <div class="content">
+							<div class="leftside">
+							  <div class="location-top"><p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Tegucigalpa | Comayagua</p></div>
+							  <div class="location-top"><p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; info@dentco.hn</p></div>
+							  <div class="location-top"><p><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; (504) 2204-4088</p></div>
+							</div>
+						  </div>
+					  </div>
+					  <div class="container">
+						<div class="navbar-header" >
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Invertir navegacion</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="img/master/logo.png" alt="DentCo Logo"></div></a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  <ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">INICIO</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ESPECIALIDADES<span class="caret-drop"></span></a>
+								<ul class="dropdown-menu">
+									<li class="divider-top"></li>
+									<li><a href="odontologia-general.html">Odontología General</a></li>
+									<li class="divider"></li>
+									<li><a href="odontologia-estetica.html">Odontología Estética</a></li>
+									<li class="divider"></li>
+									<li><a href="cirugia-maxilofacial-y-traumatologia.html">Cirugía Maxilofacial y Traumatología</a></li>
+									<li class="divider"></li>
+									<li><a href="endodoncia.html">Endodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="odontopediatria.html">Odontopediatría</a></li>
+									<li class="divider"></li>
+									<li><a href="ortodoncia.html">Ortodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="patologia-bucal.html">Patología Bucal</a></li>
+									<li class="divider"></li>
+									<li><a href="periodoncia-e-implantologia.html">Periodoncia e Implantología</a></li>
+									<li class="divider"></li>
+									<li><a href="rehabilitacion-oral.html">Rehabilitación Oral</a></li>									
+								</ul>
+							</li>
+              <li><a href="radiodiagnostico.html">RADIODIAGNÓSTICO</a></li>
+							<li><a href="team.html">EQUIPO</a></li>
+							<li><a href="about.html">NOSOTROS</a></li>
+							<li><a href="faq.html">PREGUNTAS</a></li>
+							<li><a href="contact.html">CONTACTO</a></li>
+						  </ul>
+						</div>
+					  </div>
+				</nav>
+			</div>
+		</div>
+		
+		<div class="main-slider">
+			<div class="slider" id="slider">
+			  <ul class="slider__container">
+				<li class="slider-item is-active">
+				  <figure class="slider-image hero-vertical"></figure>
+				  <h2 class="sr-only-hero">Sonrisa Perfecta Garantizada. Clínica dental DentCo</h2>
+				</li>
+			  </ul>
+			</div>
+		</div>
+		
+		<!-- SECCIÓN BIENVENIDA Y SIDEBAR -->
+		<div class="main">
+			<div class="section">
+				<div class="row">
+				  <div class="col-md-7 col-lg-8">
+					<div class="about-us">
+					  <p style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #4b6cc1; margin-bottom: 5px; font-size: 13px;">BIENVENIDOS A DENTCO</p>
+					  <h2 style="margin-top: 0; font-size: 32px; font-weight: 700;">Tu sonrisa merece una atención de excelencia.</h2>
+					  <hr class="short">	
+					  <p>En DentCo, contamos con un equipo de especialistas comprometidos con brindarte una atención dental cercana, personalizada y respaldada por tecnología moderna.</p>
+					  <p>Con clínicas en Tegucigalpa y Comayagua, ofrecemos diferentes especialidades odontológicas en un mismo lugar, para acompañarte en cada etapa del cuidado de tu sonrisa.</p>
+					  <p>Nuestra atención se complementa con DentCo Radiodiagnóstico, nuestro centro especializado en estudios dentales, que contribuye a una mejor evaluación y planificación de los tratamientos.</p>
+					  <p><color-text>Agenda tu cita y descubre por qué cada vez más pacientes confían en DentCo para el cuidado de su sonrisa.</color-text></p>	
+					</div>
+				  </div>
+				  <div class="col-md-5 col-lg-4">
+					  <div class="sidebar">
+					  	<div class="inner-sidebar shedule-front" style="padding: 25px; border-radius: 12px; background: #fdfdfd; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid #eee;">
+							<div class="inner-time-info">
+								<h3 style="font-size: 22px; font-weight: 700; color: #1a2b4c; margin-top: 0; margin-bottom: 12px;">Agenda tu próxima cita</h3>
+								<p style="font-size: 13px; color: #666; line-height: 1.5; margin-bottom: 20px;">Tu bienestar es nuestra prioridad. Estamos aquí para brindarte una atención cercana, profesional y acompañarte en cada etapa de tu tratamiento.</p>
+							</div>
+							<div class="span-schedule">
+								<h5 style="font-size: 14px; font-weight: 700; color: #4b6cc1; margin-bottom: 8px;">Nuestras ubicaciones</h5>
+								<p style="font-size: 13px; line-height: 1.4; color: #444; margin-bottom: 6px;"><strong>Tegucigalpa</strong> – Segundo piso del área comercial de Ventu Life Center, Calle Los Alcaldes.</p>
+								<p style="font-size: 13px; line-height: 1.4; color: #444; margin-bottom: 20px;"><strong>Comayagua</strong> – 1ra Ave NE entre 3ra y 4ta Calle NE, Barrio El Centro.</p>
+								
+								<h5 style="font-size: 14px; font-weight: 700; color: #4b6cc1; margin-bottom: 10px;">Horarios de atención</h5>
+								<ul class="list-group" style="margin-bottom: 20px;">
+									<li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border: none; border-bottom: 1px solid #f0f0f0;">
+										<span>Lunes a sábado</span>
+										<span class="badge" style="background: #eef2fa; color: #2b4b9b; font-weight: 600; padding: 6px 12px; border-radius: 6px;">9:00 a. m. – 7:00 p. m.</span>
+									</li>
+									<li class="list-group-item" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border: none;">
+										<span>Domingo</span>
+										<span class="badge" style="background: #eef2fa; color: #2b4b9b; font-weight: 600; padding: 6px 12px; border-radius: 6px;">9:00 a. m. – 5:00 p. m.</span>
+									</li>
+								</ul>
+								
+								<a href="https://wa.me/50422044088" class="btn btn-primary btn-block" style="background: #2b59c3; border: none; padding: 12px; font-weight: 600; border-radius: 6px;">Escríbenos <i class="fa fa-arrow-right" style="margin-left:5px;"></i></a>
+							</div>
+						</div>
+					  </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- SECCIÓN ESPECIALIDADES / SERVICIOS -->
+		<div class="main colored">
+			<div class="section">
+			<div class="section-title">
+				<p style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #4b6cc1; margin-bottom: 5px; font-size: 13px;">ATENCIÓN INTEGRAL</p>
+				<h2 style="font-size: 32px; font-weight: 700;">Nuestros servicios odontológicos</h2>
+				<hr class="center">
+				<p>En DentCo encontrarás tratamientos odontológicos para todas las etapas de la vida, realizados por especialistas y respaldados por tecnología moderna para brindarte una atención integral.</p>
+			</div>
+				<div class="row">
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/ortodoncia.svg" alt="Ortodoncia" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Ortodoncia</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Construye tu sonrisa por medio de aparatos manipulando el crecimiento óseo y posición dental.</p>  
+						  <div><a href="ortodoncia.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/implante.svg" alt="Periodoncia e Implantología" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Periodoncia e Implantología</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Cuida el sistema de soporte de tu diente, y reemplaza el perdido.</p>
+						  <div><a href="periodoncia-e-implantologia.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+					  </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/endodoncia.svg" alt="Endodoncia" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Endodoncia</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Adiós al dolor y molestias dentales garantizando la conservación funcional del diente.</p>
+						  <div><a href="endodoncia.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/odontopediatria.svg" alt="Odontopediatría" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Odontopediatría</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">El cuidado oral temprano para el desarrollo ideal de los más pequeños en casa.</p>
+						  <div><a href="odontopediatria.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/estetica.svg" alt="Odontología Estética" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Odontología Estética</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Procedimientos diseñados para que tu sonrisa brille como lo haces tú.</p>
+						  <div><a href="odontologia-estetica.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/cirugia.svg" alt="Cirugía Maxilofacial" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Cirugía Maxilofacial</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Intervenciones quirúrgicas y correcciones estructurales óseas que cambian vidas.</p>
+						  <div><a href="cirugia-maxilofacial-y-traumatologia.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/rehabilitacion.svg" alt="Rehabilitación Oral" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Rehabilitación Oral</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Recupera la estética y la funcionalidad de tu sistema masticatorio de forma integral.</p>
+						  <div><a href="rehabilitacion-oral.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/patologia.svg" alt="Patología Bucal" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Patología Bucal</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Diagnóstico e identificación de las características histopatológicas de cualquier lesión.</p>
+						  <div><a href="patologia-bucal.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                      <div class="services" style="background:#fff; padding:25px; border-radius:10px; margin-bottom:30px; box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
+                          <div class="icon" style="margin-bottom:15px;"><img src="img/servicios/general.svg" alt="Odontología General" style="width:50px;"></div>
+                          <h5 style="font-weight:700;">Odontología General</h5>
+						  <p style="font-size:13px; color:#666; margin-bottom:15px;">Tratamientos preventivos para que tu sonrisa refleje el mejor cuidado diario.</p>
+						  <div><a href="odontologia-general.html" style="font-size:13px; font-weight:700; color:#2b59c3; text-decoration:none;">Conoce más &nearr;</a></div>
+                      </div>
+                  </div>
+                </div>
+			</div>
+		</div>
+
+		<!-- SECCIÓN CONSULTORIO / UNA CLÍNICA. TODAS LAS ESPECIALIDADES (NUEVO BLOQUE) -->
+		<div class="main">
+			<div class="section" style="padding: 60px 0;">
+				<div class="row style-alignment" style="display: flex; flex-wrap: wrap; align-items: center;">
+					<!-- Columna Izquierda: Imagen del Consultorio -->
+					<div class="col-md-6" style="margin-bottom: 30px;">
+						<div class="consultorio-img-wrapper" style="position: relative; background: #fff; padding: 12px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #eaeaea;">
+							<img src="img/clinica/clinica5.jpeg" alt="Foto de Consultorio DentCo" style="width: 100%; height: auto; border-radius: 8px; display: block;" onerror="this.onerror=null; this.src='img/clinica/clinica1.jpg';">
+						</div>
+					</div>
+					<!-- Columna Derecha: Información y Cuadrícula -->
+					<div class="col-md-6">
+						<div class="consultorio-info" style="padding-left: 15px;">
+							<p style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #4b6cc1; margin-bottom: 5px; font-size: 13px;">UNA ATENCIÓN COMPLETA</p>
+							<h2 style="font-size: 34px; font-weight: 700; color: #1c2a48; margin-top: 0; margin-bottom: 15px; line-height: 1.2;">Una clínica. Todas las especialidades.</h2>
+							<p style="font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 30px;">En DentCo reunimos atención especializada, tecnología y servicios complementarios para acompañarte en el cuidado de tu salud dental.</p>
+							
+							<div class="row">
+								<div class="col-xs-6" style="margin-bottom: 20px;">
+									<div style="background: #fff; border: 1px solid #eef2f6; padding: 20px 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+										<div style="width: 42px; height: 42px; border-radius: 50%; background: #fff8eb; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+											<i class="fa fa-users" style="color: #f39c12; font-size: 18px;"></i>
+										</div>
+										<span style="font-weight: 600; font-size: 14px; color: #2c3e50; line-height: 1.3;">Equipo de especialistas</span>
+									</div>
+								</div>
+								<div class="col-xs-6" style="margin-bottom: 20px;">
+									<div style="background: #fff; border: 1px solid #eef2f6; padding: 20px 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+										<div style="width: 42px; height: 42px; border-radius: 50%; background: #fff8eb; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+											<i class="fa fa-heart-o" style="color: #f39c12; font-size: 18px;"></i>
+										</div>
+										<span style="font-weight: 600; font-size: 14px; color: #2c3e50; line-height: 1.3;">Atención integral</span>
+									</div>
+								</div>
+								<div class="col-xs-6" style="margin-bottom: 20px;">
+									<div style="background: #fff; border: 1px solid #eef2f6; padding: 20px 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+										<div style="width: 42px; height: 42px; border-radius: 50%; background: #fff8eb; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+											<i class="fa fa-scan" style="color: #f39c12; font-size: 18px;"><i class="fa fa-user-md"></i></i>
+										</div>
+										<span style="font-weight: 600; font-size: 14px; color: #2c3e50; line-height: 1.3;">DentCo Radiodiagnóstico</span>
+									</div>
+								</div>
+								<div class="col-xs-6" style="margin-bottom: 20px;">
+									<div style="background: #fff; border: 1px solid #eef2f6; padding: 20px 15px; border-radius: 10px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+										<div style="width: 42px; height: 42px; border-radius: 50%; background: #fff8eb; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0;">
+											<i class="fa fa-hospital-o" style="color: #f39c12; font-size: 18px;"></i>
+										</div>
+										<span style="font-weight: 600; font-size: 14px; color: #2c3e50; line-height: 1.3;">Tecnología de diagnóstico digital</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- SECCIÓN EXPLORA DENTCO -->
+		<div class="main colored" style="padding: 60px 0; background-color: #F8F5EF;">
+			<div class="section">
+				<p style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: #4b6cc1; margin-bottom: 5px; font-size: 13px;">CONOCE NUESTRA CLÍNICA</p>
+				<h2 style="font-size: 32px; font-weight: 700; margin-top: 0; margin-bottom: 30px;">Explora DentCo</h2>
+				
+				<div class="row">
+					<div class="col-sm-6 col-md-3" style="margin-bottom: 15px;">
+						<a href="about.html" style="text-decoration: none;">
+							<div style="background: #ffffff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #ece6da; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;">
+								<span style="font-weight: 700; color: #1c2a48; font-size: 16px;">Sobre nosotros</span>
+								<i class="fa fa-arrow-right" style="color: #4b6cc1;"></i>
+							</div>
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-3" style="margin-bottom: 15px;">
+						<a href="team.html" style="text-decoration: none;">
+							<div style="background: #ffffff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #ece6da; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;">
+								<span style="font-weight: 700; color: #1c2a48; font-size: 16px;">Nuestro equipo</span>
+								<i class="fa fa-arrow-right" style="color: #4b6cc1;"></i>
+							</div>
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-3" style="margin-bottom: 15px;">
+						<a href="radiodiagnostico.html" style="text-decoration: none;">
+							<div style="background: #ffffff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #ece6da; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;">
+								<span style="font-weight: 700; color: #1c2a48; font-size: 16px;">Radiodiagnóstico</span>
+								<i class="fa fa-arrow-right" style="color: #4b6cc1;"></i>
+							</div>
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-3" style="margin-bottom: 15px;">
+						<a href="contact.html" style="text-decoration: none;">
+							<div style="background: #ffffff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); border: 1px solid #ece6da; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease;">
+								<span style="font-weight: 700; color: #1c2a48; font-size: 16px;">Contáctanos</span>
+								<i class="fa fa-arrow-right" style="color: #4b6cc1;"></i>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- END MAIN CONTAINER -->		
+	
+	<!-- FOOTER -->
+	<div class="footer" style="background: #F5F7F9; color: #1c2a48; padding-top: 50px;">
+		<div class="main">
+			<div class="row">
+			  <div class="col-md-7 footer-info">
+				  <div class="about-footer">
+				  	<div class="logo-brand" style="margin-bottom: 20px;"><img src="img/master/logo.png" alt="DentCo Logo"></div>
+				  	<h5 style="color: #1c2a48; font-weight: 700; margin-bottom: 10px;">Cuidamos tu sonrisa en Tegucigalpa y Comayagua.</h5>
+				  	<p style="font-style: italic; color: #4f5b6d; font-size: 13px; line-height: 1.6; margin-bottom: 30px;">
+				  		Señor quiero que estés conmigo todos los días mientras practico la odontología. Que tus tiernas manos guíen las mías mientras atienda a todos los que en mí confían. Que cada paciente sienta mi competencia y habilidad, ya sea por una cirugía compleja o un simple diente a rellenar. Quiero que estés conmigo mientras diagnostico y trato, para que recibas una sonrisa hermosa y saludable de la boca de mis pacientes. Amén.
+				  	</p>
+
+					<div class="footer-location" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Tegucigalpa</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">Ventu Life Center, segundo piso del área comercial, Calle Los Alcaldes, Tegucigalpa, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Comayagua</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">1ra Avenida NE, entre 3ra y 4ta Calle NE, Barrio El Centro, Comayagua, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location" style="grid-column: span 2;">
+						<a href="contact.html" style="color: #1c2a48; font-weight: 700; text-decoration: none;">Contáctanos &nearr;</a>
+					  </div>
+				    </div>
+				  </div>
+			 </div>
+				
+			  <div class="col-md-5 footer-maps">
+				<h5 style="color: #1c2a48; font-weight: 700; margin: 0 0 12px;">Encuéntranos</h5>
+				<div class="sedes-tabs" role="tablist" aria-label="Sedes DentCo">
+					<button type="button" class="sedes-tab is-active" role="tab" aria-selected="true" data-sede="tgu">Tegucigalpa</button>
+					<button type="button" class="sedes-tab" role="tab" aria-selected="false" data-sede="cmy">Comayagua</button>
+				</div>
+				<div class="sedes-card">
+					<div class="sedes-map is-active" id="sede-tgu" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Tegucigalpa</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/sbLaZ2fQcTJXcjwT8" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Tegucigalpa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.0596222,-87.2270734%28DentCo%20Tegucigalpa%29&z=17&output=embed"></iframe>
+					</div>
+					<div class="sedes-map" id="sede-cmy" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Comayagua</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/4sSY2R1Kyv7haty47" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Comayagua" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.4597405,-87.6401733%28DentCo%20Comayagua%29&z=17&output=embed"></iframe>
+					</div>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="bottom-footer" style="border-top: 1px solid rgba(28,42,72,0.12); margin-top: 40px; padding: 20px 0;">
+				<div class="main">
+					<div class="section">
+						<div class="column-left">
+							<p style="color: #5f6b7a; margin: 0; font-size: 12px;">© 2026 Derechos Reservados, DentCo</p>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<a href="#0" class="cd-top">Top</a>
+	
+	<!-- JAVASCRIPTS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/loader.js"></script>
+	<script src="js/top.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/parallax.js"></script>
+	<script src="js/flickity.pkgd.min.js"></script> 
+	
+	<script>
+	// Pestañas de sedes (Tegucigalpa / Comayagua)
+	(function(){
+		var tabs=document.querySelectorAll('.sedes-tab');
+		tabs.forEach(function(t){
+			t.addEventListener('click',function(){
+				tabs.forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-selected','false');});
+				document.querySelectorAll('.sedes-map').forEach(function(m){m.classList.remove('is-active');});
+				t.classList.add('is-active');t.setAttribute('aria-selected','true');
+				document.getElementById('sede-'+t.dataset.sede).classList.add('is-active');
+			});
+		});
+	})();
+	</script>
+</body>
+</html>

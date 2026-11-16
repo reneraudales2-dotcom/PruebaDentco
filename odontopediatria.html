@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+		<!-- ==============================================
+		TITLE AND META TAGS
+		=============================================== -->
+		<title>Odontopediatría | DentCo Tegucigalpa y Comayagua</title>
+        <meta name="description" content="En DentCo reunimos atención especializada, tecnología y servicios complementarios para acompañarte en el cuidado de tu salud dental.">
+        <meta name="keywords" content="odontologia, dentista, tegucigalpa, comayagua, dentco, clinica dental, odontopediatria, dentista de niños">
+        <meta name="author" content="Quickdev">
+
+		<!-- ==============================================
+		FAVICON
+		=============================================== -->  
+        <link rel="shortcut icon" href="img/master/favicon.png">
+             
+		<!-- ==============================================
+		CSS
+		=============================================== -->  
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+		
+		<style>
+		/* Paleta del cliente: beige #F8F5EF, blanco y gris claro #F5F7F9 */
+		:root{--bg-beige:#F8F5EF;--bg-gris:#F5F7F9;--bg-blanco:#FFFFFF}
+		body{background-color:var(--bg-blanco)}
+		.wrapper .main{background-color:var(--bg-blanco)}
+		.wrapper .main.colored{background-color:var(--bg-beige)}
+
+		/* Sección Encuéntranos: pestañas + mapas */
+		.sedes-tabs{display:flex;justify-content:flex-start;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+		.sedes-tab{border:1px solid #ece6da;background:#F8F5EF;color:#1c2a48;font-weight:700;font-size:14px;padding:10px 22px;font-family:inherit;border-radius:6px;cursor:pointer;transition:all .2s ease}
+		.sedes-tab:hover{background:#efe9dc}
+		.sedes-tab.is-active{background:#2b59c3;border-color:#2b59c3;color:#fff}
+		.sedes-card{margin:0;border:1px solid #ece6da;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+		.sedes-info{background:#F8F5EF;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+		.sedes-info p{margin:0;font-size:14px;color:#4f5b6d;line-height:1.5}
+		.sedes-info strong{color:#1c2a48;margin-right:6px}
+		.sedes-links a{display:inline-block;margin-left:0;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;background:#2b59c3;color:#fff}
+		.sedes-links a.sec{background:#fff;color:#2b59c3;border:1px solid #2b59c3}
+		.sedes-map{display:none}
+		.sedes-map.is-active{display:block}
+		.sedes-map iframe{display:block;width:100%;height:320px;border:0}
+		@media (max-width:600px){.sedes-map iframe{height:280px}}
+
+		/* ===== Página de especialidad ===== */
+		.esp{--azul:#2b59c3;--navy:#1c2a48;--texto:#4f5b6d;--beige:#F8F5EF;--gris:#F5F7F9;--borde:#ece6da;--dorado:#E8CE63}
+		.esp, .esp *{box-sizing:border-box}
+		.esp-container{max-width:1140px;margin:0 auto;padding:0 20px}
+		.esp-eyebrow{display:block;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;font-size:12px;color:var(--azul);margin:0 0 8px}
+		.esp h2.esp-title{font-size:28px;line-height:1.25;font-weight:700;color:var(--navy);margin:0 0 14px}
+		.esp p.esp-text{font-size:15px;line-height:1.75;color:var(--texto);margin:0}
+		.esp-section{padding:70px 0}
+		.esp-section.beige{background:var(--beige)}
+		.esp-section.gris{background:var(--gris)}
+		.esp-section.blanco{background:#fff}
+
+		/* Espacios para imágenes (se reemplazan al agregar el archivo) */
+		.img-slot{position:relative;overflow:hidden;border-radius:12px;background:linear-gradient(135deg,#e6dfd0,#efe9dc);border:1px dashed #cfc5ae}
+		.img-slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2;border-radius:inherit}
+		.img-slot .slot-label{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:16px;color:#8a7f66;font-size:13px;font-weight:600;line-height:1.4}
+		.img-slot .slot-label i{font-size:30px;opacity:.8}
+		.img-slot .slot-label small{font-weight:400;font-size:11px;opacity:.85}
+
+		/* 01 Banner */
+		.esp-hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#1c2a48,#2b4a8a);color:#fff;padding:190px 0 90px;min-height:480px;display:flex;align-items:flex-end}
+		.esp-hero .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+		.esp-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,32,56,.82) 0%,rgba(20,32,56,.55) 45%,rgba(20,32,56,.15) 100%)}
+		.esp-hero .esp-container{position:relative;z-index:3;width:100%}
+		.esp-hero .crumbs{font-size:13px;letter-spacing:.5px;opacity:.85;margin:0 0 14px;color:#fff}
+		.esp-hero .crumbs a{color:#fff;text-decoration:none}
+		.esp-hero h1{font-size:54px;line-height:1.1;font-weight:700;color:#fff;margin:0 0 16px;text-transform:none}
+		.esp-hero p.sub{font-size:18px;line-height:1.6;max-width:620px;color:#f1f4fa;margin:0}
+		.esp-hero .hero-hint{position:absolute;z-index:3;right:20px;bottom:16px;font-size:11px;color:rgba(255,255,255,.7);background:rgba(0,0,0,.25);padding:5px 10px;border-radius:20px}
+
+		/* 02 y 03 */
+		.esp-duo{display:grid;grid-template-columns:1.15fr 1fr;gap:28px}
+		.esp-card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:32px;box-shadow:0 4px 15px rgba(0,0,0,.03)}
+		.esp-que{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center}
+		.esp-que .img-slot{aspect-ratio:4/5}
+		.esp-signs{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+		.esp-signs li{display:flex;align-items:center;gap:12px;background:var(--beige);border-radius:10px;padding:14px;font-size:14px;line-height:1.4;color:var(--navy);font-weight:600}
+		.esp-signs li:last-child:nth-child(odd){grid-column:span 2}
+		.esp-signs .ico{flex:0 0 40px;height:40px;border-radius:50%;background:#fff;color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:17px}
+
+		/* 04 */
+		.esp-head{text-align:center;margin-bottom:34px}
+		.esp-head p.esp-text{max-width:640px;margin:0 auto}
+		.esp-treat{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+		.esp-treat li{list-style:none;background:var(--beige);border:1px solid var(--borde);border-radius:12px;padding:26px 18px;text-align:center;font-size:15px;font-weight:600;color:var(--navy);line-height:1.4}
+		.esp-treat .ico{display:flex;width:44px;height:44px;margin:0 auto 12px;border-radius:50%;background:#fff;color:var(--azul);align-items:center;justify-content:center;font-size:18px}
+		.esp-treat{margin:0;padding:0}
+		/* 5 tratamientos: 3 arriba + 2 centrados abajo */
+		.esp-treat.cinco{display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+		.esp-treat.cinco li{flex:0 0 calc((100% - 36px)/3)}
+
+		/* 05 */
+		.esp-team{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
+		.esp-doc{display:grid;grid-template-columns:minmax(240px,420px) 1fr;gap:34px;align-items:center}
+		.esp-doc .img-slot{aspect-ratio:1080/1030;border-radius:14px}
+		.esp-doc h3{font-size:30px;font-weight:700;color:var(--navy);margin:0 0 6px}
+		.esp-doc .rol{font-size:16px;line-height:1.5;color:var(--texto);margin:0}
+
+		/* 06 CTA */
+		.esp-cta{background:#1f3550;color:#fff;text-align:center;padding:70px 0}
+		.esp-cta h2{font-size:30px;font-weight:700;color:#fff;margin:0 0 12px}
+		.esp-cta p{font-size:16px;color:#dbe3f0;margin:0 auto 26px;max-width:560px;line-height:1.6}
+		.esp-btn{display:inline-block;background:var(--dorado);color:#1c2a48;font-weight:700;font-size:15px;padding:14px 34px;border-radius:8px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+		.esp-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25);color:#1c2a48;text-decoration:none}
+
+		@media (max-width:991px){
+			.esp-duo{grid-template-columns:1fr}
+			.esp-treat{grid-template-columns:1fr 1fr}
+			.esp-treat.cinco li{flex:0 0 calc((100% - 18px)/2)}
+			.esp-hero{padding:150px 0 60px;min-height:380px}
+			.esp-hero h1{font-size:40px}
+		}
+		@media (max-width:600px){
+			.esp-section{padding:50px 0}
+			.esp-que,.esp-signs,.esp-doc{grid-template-columns:1fr}
+			.esp-signs li:last-child:nth-child(odd){grid-column:auto}
+			.esp-card{padding:22px}
+			.esp-treat{grid-template-columns:1fr}
+			.esp-treat.cinco li{flex:0 0 100%}
+			.esp-team{grid-template-columns:1fr}
+			.esp-doc .img-slot{max-width:100%}
+			.esp-hero h1{font-size:34px}
+		}
+		</style>
+	</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+</div>
+<!-- LOADER -->
+	
+	<!-- MAIN CONTAINER -->
+	<div class="wrapper">
+		<div class="header">
+			<div class="navbar">
+				<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+					  <div class="top-header">
+						  <div class="content">
+							<div class="leftside">
+							  <div class="location-top"><p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Tegucigalpa | Comayagua</p></div>
+							  <div class="location-top"><p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; info@dentco.hn</p></div>
+							  <div class="location-top"><p><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; (504) 2204-4088</p></div>
+							</div>
+						  </div>
+					  </div>
+					  <div class="container">
+						<div class="navbar-header" >
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Invertir navegacion</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="img/master/logo.png" alt="DentCo Logo"></div></a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  <ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">INICIO</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ESPECIALIDADES<span class="caret-drop"></span></a>
+								<ul class="dropdown-menu">
+									<li class="divider-top"></li>
+									<li><a href="odontologia-general.html">Odontología General</a></li>
+									<li class="divider"></li>
+									<li><a href="odontologia-estetica.html">Odontología Estética</a></li>
+									<li class="divider"></li>
+									<li><a href="cirugia-maxilofacial-y-traumatologia.html">Cirugía Maxilofacial y Traumatología</a></li>
+									<li class="divider"></li>
+									<li><a href="endodoncia.html">Endodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="odontopediatria.html">Odontopediatría</a></li>
+									<li class="divider"></li>
+									<li><a href="ortodoncia.html">Ortodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="patologia-bucal.html">Patología Bucal</a></li>
+									<li class="divider"></li>
+									<li><a href="periodoncia-e-implantologia.html">Periodoncia e Implantología</a></li>
+									<li class="divider"></li>
+									<li><a href="rehabilitacion-oral.html">Rehabilitación Oral</a></li>									
+								</ul>
+							</li>	
+							<li><a href="radiodiagnostico.html">RADIODIAGNÓSTICO</a></li>					
+							<li><a href="team.html">EQUIPO</a></li>
+							<li><a href="about.html">NOSOTROS</a></li>
+							<li><a href="faq.html">PREGUNTAS</a></li>
+							<li><a href="contact.html">CONTACTO</a></li>
+						  </ul>
+						</div>
+					  </div>
+				</nav>
+			</div>
+		</div>
+		
+
+		<div class="esp">
+
+		<!-- 01 · BANNER PRINCIPAL -->
+		<section class="esp-hero">
+			<img class="hero-img" src="img/especialidades/ODONTOPEDIATR%C3%8DA/ODONTOPEDIATR%C3%8DA%20BANNER/odontopediatr%C3%ADa-tegucigalpa-dentco.png" alt="Dra. Leslie Ferrufino atendiendo a una niña" onerror="this.style.display='none'">
+			<div class="esp-container">
+				<p class="crumbs"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Especialidades &nbsp;/&nbsp; Odontopediatría</p>
+				<h1>Odontopediatría</h1>
+				<p class="sub">Cuidamos la salud bucal de los más pequeños con una atención cercana y adaptada a cada etapa de su crecimiento.</p>
+			</div>
+		</section>
+
+		<!-- 02 · ¿QUÉ ES? y 03 · VALORACIÓN -->
+		<section class="esp-section beige">
+			<div class="esp-container">
+				<div class="esp-duo">
+
+					<div class="esp-card">
+						<div class="esp-que">
+							<div>
+								<span class="esp-eyebrow">Especialidad</span>
+								<h2 class="esp-title">¿Qué es la odontopediatría?</h2>
+								<p class="esp-text">Es la especialidad dedicada al cuidado de la salud bucal de bebés, niños y adolescentes, desde sus primeras evaluaciones hasta tratamientos preventivos y restaurativos.</p>
+							</div>
+							<div class="img-slot">
+								<img src="img/especialidades/ODONTOPEDIATR%C3%8DA/QUE%20ES%20ODONTOPEDIATR%C3%8DA/dentista%20ni%C3%B1os-honduras-dentco.png" alt="Niño interactuando con la doctora del gorro amarillo" loading="lazy" onerror="this.style.display='none'">
+								<div class="slot-label"><i class="fa fa-picture-o" aria-hidden="true"></i>Niño interactuando con la doctora del gorro amarillo<small>Vertical 4:5 · 800×1000 px</small></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="esp-card">
+						<span class="esp-eyebrow">Valoración</span>
+						<h2 class="esp-title">¿Cuándo se recomienda una valoración?</h2>
+						<ul class="esp-signs">
+							<li><span class="ico"><i class="fa fa-child" aria-hidden="true"></i></span>Primera visita dental</li>
+							<li><span class="ico"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>Revisiones y controles preventivos</li>
+							<li><span class="ico"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span>Aparición de caries</li>
+							<li><span class="ico"><i class="fa fa-bolt" aria-hidden="true"></i></span>Dolor o molestias dentales</li>
+							<li><span class="ico"><i class="fa fa-line-chart" aria-hidden="true"></i></span>Seguimiento del crecimiento y desarrollo dental</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 04 · TRATAMIENTOS DISPONIBLES -->
+		<section class="esp-section blanco">
+			<div class="esp-container">
+				<div class="esp-head">
+					<span class="esp-eyebrow">Servicios</span>
+					<h2 class="esp-title">Tratamientos disponibles</h2>
+				</div>
+				<ul class="esp-treat cinco">
+					<li><span class="ico"><i class="fa fa-check" aria-hidden="true"></i></span>Evaluaciones infantiles</li>
+					<li><span class="ico"><i class="fa fa-check" aria-hidden="true"></i></span>Limpiezas dentales</li>
+					<li><span class="ico"><i class="fa fa-check" aria-hidden="true"></i></span>Aplicación de flúor</li>
+					<li><span class="ico"><i class="fa fa-check" aria-hidden="true"></i></span>Sellantes dentales</li>
+					<li><span class="ico"><i class="fa fa-check" aria-hidden="true"></i></span>Restauraciones infantiles</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- 05 · CONOCE A NUESTRAS ESPECIALISTAS -->
+		<section class="esp-section gris">
+			<div class="esp-container">
+				<div class="esp-head">
+					<span class="esp-eyebrow">Equipo</span>
+					<h2 class="esp-title">Conoce a nuestras especialistas</h2>
+					<p class="esp-text">En DentCo contamos con profesionales dedicadas al cuidado de la salud bucal infantil, brindando una atención cercana y adaptada a las necesidades de cada niño.</p>
+				</div>
+				<div class="esp-team">
+
+					<div class="esp-doc">
+						<div class="img-slot">
+							<img src="img/especialidades/ODONTOPEDIATR%C3%8DA/CONOCE%20TU%20ESPECIALISTA/odontopediatra-tegucigalpa-honduras-dentco.jpg" alt="Fotografía de estudio de la Dra. Leslie Ferrufino" loading="lazy" onerror="this.style.display='none'">
+							<div class="slot-label"><i class="fa fa-picture-o" aria-hidden="true"></i>Fotografía de estudio de la Dra. Leslie Ferrufino<small>Casi cuadrada · 1080×1030 px</small></div>
+						</div>
+						<div>
+							<h3>Dra. Leslie Ferrufino</h3>
+							<p class="rol">DentCo Tegucigalpa.</p>
+						</div>
+					</div>
+
+					<div class="esp-doc">
+						<div class="img-slot">
+							<img src="img/especialidades/ODONTOPEDIATR%C3%8DA/CONOCE%20TU%20ESPECIALISTA/odontopediatr%C3%ADa-comayagua-honduras-dentco.png" alt="Fotografía de la Dra. Belkis Mendoza" loading="lazy" onerror="this.style.display='none'">
+							<div class="slot-label"><i class="fa fa-picture-o" aria-hidden="true"></i>Fotografía de la Dra. Belkis Mendoza<small>Casi cuadrada · 1080×1030 px</small></div>
+						</div>
+						<div>
+							<h3>Dra. Belkis Mendoza</h3>
+							<p class="rol">DentCo Comayagua.</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 06 · CTA FINAL (igual en todas las especialidades) -->
+		<section class="esp-cta">
+			<div class="esp-container">
+				<h2>Tu sonrisa merece una atención especializada.</h2>
+				<p>Agenda tu valoración y recibe un plan de tratamiento pensado para ti.</p>
+				<a class="esp-btn" href="contact.html">Agenda tu cita</a>
+			</div>
+		</section>
+
+		</div>
+	</div>
+	<!-- END MAIN CONTAINER -->		
+	
+	<!-- FOOTER -->
+	<div class="footer" style="background: #F5F7F9; color: #1c2a48; padding-top: 50px;">
+		<div class="main">
+			<div class="row">
+			  <div class="col-md-7 footer-info">
+				  <div class="about-footer">
+				  	<div class="logo-brand" style="margin-bottom: 20px;"><img src="img/master/logo.png" alt="DentCo Logo"></div>
+				  	<h5 style="color: #1c2a48; font-weight: 700; margin-bottom: 10px;">Cuidamos tu sonrisa en Tegucigalpa y Comayagua.</h5>
+				  	<p style="font-style: italic; color: #4f5b6d; font-size: 13px; line-height: 1.6; margin-bottom: 30px;">
+				  		Señor quiero que estés conmigo todos los días mientras practico la odontología. Que tus tiernas manos guíen las mías mientras atienda a todos los que en mí confían. Que cada paciente sienta mi competencia y habilidad, ya sea por una cirugía compleja o un simple diente a rellenar. Quiero que estés conmigo mientras diagnostico y trato, para que recibas una sonrisa hermosa y saludable de la boca de mis pacientes. Amén.
+				  	</p>
+
+					<div class="footer-location" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Tegucigalpa</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">Ventu Life Center, segundo piso del área comercial, Calle Los Alcaldes, Tegucigalpa, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Comayagua</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">1ra Avenida NE, entre 3ra y 4ta Calle NE, Barrio El Centro, Comayagua, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location" style="grid-column: span 2;">
+						<a href="contact.html" style="color: #1c2a48; font-weight: 700; text-decoration: none;">Contáctanos &nearr;</a>
+					  </div>
+				    </div>
+				  </div>
+			 </div>
+				
+			  <div class="col-md-5 footer-maps">
+				<h5 style="color: #1c2a48; font-weight: 700; margin: 0 0 12px;">Encuéntranos</h5>
+				<div class="sedes-tabs" role="tablist" aria-label="Sedes DentCo">
+					<button type="button" class="sedes-tab is-active" role="tab" aria-selected="true" data-sede="tgu">Tegucigalpa</button>
+					<button type="button" class="sedes-tab" role="tab" aria-selected="false" data-sede="cmy">Comayagua</button>
+				</div>
+				<div class="sedes-card">
+					<div class="sedes-map is-active" id="sede-tgu" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Tegucigalpa</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/sbLaZ2fQcTJXcjwT8" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Tegucigalpa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.0596222,-87.2270734%28DentCo%20Tegucigalpa%29&z=17&output=embed"></iframe>
+					</div>
+					<div class="sedes-map" id="sede-cmy" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Comayagua</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/4sSY2R1Kyv7haty47" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Comayagua" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.4597405,-87.6401733%28DentCo%20Comayagua%29&z=17&output=embed"></iframe>
+					</div>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="bottom-footer" style="border-top: 1px solid rgba(28,42,72,0.12); margin-top: 40px; padding: 20px 0;">
+				<div class="main">
+					<div class="section">
+						<div class="column-left">
+							<p style="color: #5f6b7a; margin: 0; font-size: 12px;">© 2026 Derechos Reservados, DentCo</p>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<a href="#0" class="cd-top">Top</a>
+	
+	<!-- JAVASCRIPTS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/loader.js"></script>
+	<script src="js/top.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/parallax.js"></script>
+	
+	<script>
+	// Pestañas de sedes (Tegucigalpa / Comayagua)
+	(function(){
+		var tabs=document.querySelectorAll('.sedes-tab');
+		tabs.forEach(function(t){
+			t.addEventListener('click',function(){
+				tabs.forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-selected','false');});
+				document.querySelectorAll('.sedes-map').forEach(function(m){m.classList.remove('is-active');});
+				t.classList.add('is-active');t.setAttribute('aria-selected','true');
+				document.getElementById('sede-'+t.dataset.sede).classList.add('is-active');
+			});
+		});
+	})();
+	</script>
+</body>
+</html>

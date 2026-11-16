@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+		<!-- ==============================================
+		TITLE AND META TAGS
+		=============================================== -->
+		<title>Contacto | DentCo Tegucigalpa y Comayagua</title>
+        <meta name="description" content="Agenda tu cita en DentCo. Conoce nuestras ubicaciones, horarios y medios de contacto en Tegucigalpa y Comayagua.">
+        <meta name="keywords" content="odontologia, dentista, tegucigalpa, comayagua, dentco, clinica dental, contacto, agenda tu cita">
+        <meta name="author" content="Quickdev">
+
+		<!-- ==============================================
+		FAVICON
+		=============================================== -->  
+        <link rel="shortcut icon" href="img/master/favicon.png">
+             
+		<!-- ==============================================
+		CSS
+		=============================================== -->  
+        <link rel="stylesheet" href="css/bootstrap.min.css"> 
+        <link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+		
+		<style>
+		/* Paleta del cliente: beige #F8F5EF, blanco y gris claro #F5F7F9 */
+		:root{--bg-beige:#F8F5EF;--bg-gris:#F5F7F9;--bg-blanco:#FFFFFF}
+		body{background-color:var(--bg-blanco)}
+		.wrapper .main{background-color:var(--bg-blanco)}
+		.wrapper .main.colored{background-color:var(--bg-beige)}
+
+		/* Sección Encuéntranos: pestañas + mapas */
+		.sedes-tabs{display:flex;justify-content:flex-start;gap:10px;margin:0 0 14px;flex-wrap:wrap}
+		.sedes-tab{border:1px solid #ece6da;background:#F8F5EF;color:#1c2a48;font-weight:700;font-size:14px;padding:10px 22px;font-family:inherit;border-radius:6px;cursor:pointer;transition:all .2s ease}
+		.sedes-tab:hover{background:#efe9dc}
+		.sedes-tab.is-active{background:#2b59c3;border-color:#2b59c3;color:#fff}
+		.sedes-card{margin:0;border:1px solid #ece6da;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 4px 15px rgba(0,0,0,.04)}
+		.sedes-info{background:#F8F5EF;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+		.sedes-info p{margin:0;font-size:14px;color:#4f5b6d;line-height:1.5}
+		.sedes-info strong{color:#1c2a48;margin-right:6px}
+		.sedes-links a{display:inline-block;margin-left:0;padding:8px 14px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;background:#2b59c3;color:#fff}
+		.sedes-links a.sec{background:#fff;color:#2b59c3;border:1px solid #2b59c3}
+		.sedes-map{display:none}
+		.sedes-map.is-active{display:block}
+		.sedes-map iframe{display:block;width:100%;height:320px;border:0}
+		@media (max-width:600px){.sedes-map iframe{height:280px}}
+
+		/* ===== Página de contacto (misma base que las especialidades) ===== */
+		.esp{--azul:#2b59c3;--navy:#1c2a48;--texto:#4f5b6d;--beige:#F8F5EF;--gris:#F5F7F9;--borde:#ece6da;--dorado:#E8CE63}
+		.esp, .esp *{box-sizing:border-box}
+		.esp-container{max-width:1140px;margin:0 auto;padding:0 20px}
+		.esp-eyebrow{display:block;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;font-size:12px;color:var(--azul);margin:0 0 8px}
+		.esp h2.esp-title{font-size:28px;line-height:1.25;font-weight:700;color:var(--navy);margin:0 0 14px}
+		.esp-section{padding:70px 0}
+		.esp-section.beige{background:var(--beige)}
+		.esp-section.gris{background:var(--gris)}
+		.esp-section.blanco{background:#fff}
+		.esp-head{text-align:center;margin-bottom:34px}
+
+		/* 01 Banner */
+		.esp-hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#1c2a48,#2b4a8a);color:#fff;padding:190px 0 90px;min-height:480px;display:flex;align-items:flex-end}
+		.esp-hero .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+		.esp-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,32,56,.82) 0%,rgba(20,32,56,.55) 45%,rgba(20,32,56,.15) 100%)}
+		.esp-hero .esp-container{position:relative;z-index:3;width:100%}
+		.esp-hero .crumbs{font-size:13px;letter-spacing:.5px;opacity:.85;margin:0 0 14px;color:#fff}
+		.esp-hero .crumbs a{color:#fff;text-decoration:none}
+		.esp-hero h1{font-size:54px;line-height:1.1;font-weight:700;color:#fff;margin:0 0 16px;text-transform:none}
+		.esp-hero p.sub{font-size:18px;line-height:1.6;max-width:620px;color:#f1f4fa;margin:0}
+
+		/* Botón */
+		.esp-btn{display:inline-block;background:var(--dorado);color:#1c2a48;font-weight:700;font-size:15px;padding:14px 34px;border-radius:8px;text-decoration:none;transition:transform .15s ease,box-shadow .15s ease}
+		.esp-btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.25);color:#1c2a48;text-decoration:none}
+		.esp-btn i{margin-right:8px}
+
+		/* 02 Clínicas */
+		.cl-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+		.cl-card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:34px;box-shadow:0 4px 15px rgba(0,0,0,.03);display:flex;flex-direction:column}
+		.cl-card h3{font-size:24px;font-weight:700;color:var(--navy);margin:0 0 20px}
+		.cl-row{display:flex;gap:14px;align-items:flex-start;margin:0 0 16px}
+		.cl-row .ico{flex:0 0 40px;height:40px;border-radius:50%;background:var(--beige);color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:17px}
+		.cl-row .txt{font-size:15px;line-height:1.6;color:var(--texto)}
+		.cl-row .txt strong{display:block;color:var(--navy);font-size:13px;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+		.cl-row .txt a{color:var(--texto);text-decoration:none}
+		.cl-row .txt a:hover{color:var(--azul)}
+		.cl-row .txt ul{list-style:none;margin:0;padding:0}
+		.cl-btn{margin-top:auto;padding-top:14px}
+
+		/* 03 Redes */
+		.rs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+		.rs-card{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:30px;box-shadow:0 4px 15px rgba(0,0,0,.03)}
+		.rs-card h3{font-size:20px;font-weight:700;color:var(--navy);margin:0 0 18px}
+		.rs-link{display:flex;align-items:center;gap:14px;background:var(--beige);border-radius:10px;padding:14px;margin:0 0 12px;text-decoration:none;color:var(--navy);font-weight:600;font-size:14px;line-height:1.4;transition:background .2s ease}
+		.rs-link:last-child{margin-bottom:0}
+		.rs-link:hover{background:#efe9dc;color:var(--navy);text-decoration:none}
+		.rs-link .ico{flex:0 0 40px;height:40px;border-radius:50%;background:#fff;color:var(--azul);display:flex;align-items:center;justify-content:center;font-size:18px}
+		.rs-link small{display:block;font-weight:400;color:var(--texto);font-size:13px;word-break:break-word}
+
+		@media (max-width:991px){
+			.cl-grid{grid-template-columns:1fr}
+			.rs-grid{grid-template-columns:1fr}
+			.esp-hero{padding:150px 0 60px;min-height:380px}
+			.esp-hero h1{font-size:40px}
+		}
+		@media (max-width:600px){
+			.esp-section{padding:50px 0}
+			.cl-card{padding:24px}
+			.esp-hero h1{font-size:34px}
+		}
+		</style>
+	</head>
+
+<body>
+
+<!-- LOADER -->
+<div id="loader-wrapper">
+<div id="loader"></div>
+</div>
+<!-- LOADER -->
+	
+	<!-- MAIN CONTAINER -->
+	<div class="wrapper">
+		<div class="header">
+			<div class="navbar">
+				<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+					  <div class="top-header">
+						  <div class="content">
+							<div class="leftside">
+							  <div class="location-top"><p><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp; Tegucigalpa | Comayagua</p></div>
+							  <div class="location-top"><p><i class="fa fa-envelope-o" aria-hidden="true"></i>&nbsp; info@dentco.hn</p></div>
+							  <div class="location-top"><p><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp; (504) 2204-4088</p></div>
+							</div>
+						  </div>
+					  </div>
+					  <div class="container">
+						<div class="navbar-header" >
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Invertir navegacion</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+						  <a class="navbar-brand" href="index.html"><div class="logo-brand"><img src="img/master/logo.png" alt="DentCo Logo"></div></a>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						  <ul class="nav navbar-nav navbar-right">
+							<li><a href="index.html">INICIO</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ESPECIALIDADES<span class="caret-drop"></span></a>
+								<ul class="dropdown-menu">
+									<li class="divider-top"></li>
+									<li><a href="odontologia-general.html">Odontología General</a></li>
+									<li class="divider"></li>
+									<li><a href="odontologia-estetica.html">Odontología Estética</a></li>
+									<li class="divider"></li>
+									<li><a href="cirugia-maxilofacial-y-traumatologia.html">Cirugía Maxilofacial y Traumatología</a></li>
+									<li class="divider"></li>
+									<li><a href="endodoncia.html">Endodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="odontopediatria.html">Odontopediatría</a></li>
+									<li class="divider"></li>
+									<li><a href="ortodoncia.html">Ortodoncia</a></li>
+									<li class="divider"></li>
+									<li><a href="patologia-bucal.html">Patología Bucal</a></li>
+									<li class="divider"></li>
+									<li><a href="periodoncia-e-implantologia.html">Periodoncia e Implantología</a></li>
+									<li class="divider"></li>
+									<li><a href="rehabilitacion-oral.html">Rehabilitación Oral</a></li>									
+								</ul>
+							</li>	
+							<li><a href="radiodiagnostico.html">RADIODIAGNÓSTICO</a></li>					
+							<li><a href="team.html">EQUIPO</a></li>
+							<li><a href="about.html">NOSOTROS</a></li>
+							<li><a href="faq.html">PREGUNTAS</a></li>
+							<li><a href="contact.html">CONTACTO</a></li>
+						  </ul>
+						</div>
+					  </div>
+				</nav>
+			</div>
+		</div>
+		
+
+		<div class="esp">
+
+		<!-- 01 · BANNER -->
+		<section class="esp-hero">
+			<img class="hero-img" src="img/banner/cl%C3%ADnica%20dental-honduras-comayagua-tegucigalpa-dentco.png" alt="Clínica dental DentCo en Tegucigalpa y Comayagua" onerror="this.style.display='none'">
+			<div class="esp-container">
+				<p class="crumbs"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Contacto</p>
+				<h1>Agenda tu cita</h1>
+				<p class="sub">Estamos listos para atenderte. Conoce nuestras ubicaciones, horarios y medios de contacto para agendar tu próxima visita.</p>
+			</div>
+		</section>
+
+		<!-- 02 · NUESTRAS CLÍNICAS -->
+		<section class="esp-section beige">
+			<div class="esp-container">
+				<div class="esp-head">
+					<span class="esp-eyebrow">Contacto</span>
+					<h2 class="esp-title">Nuestras clínicas</h2>
+				</div>
+				<div class="cl-grid">
+
+					<!-- Tegucigalpa -->
+					<div class="cl-card">
+						<h3>DentCo Tegucigalpa</h3>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Dirección</strong>Ventu Life Center, segundo piso del área comercial, calle Los Alcaldes, Tegucigalpa.</div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-phone" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Teléfono</strong><a href="tel:+50422044088">+504 2204-4088</a></div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+							<div class="txt"><strong>WhatsApp</strong><a href="https://wa.me/50433255192" target="_blank" rel="noopener">+504 3325-5192</a></div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Horario de atención</strong>
+								<ul>
+									<li>Lunes a sábado: 9:00 a. m. – 7:00 p. m.</li>
+									<li>Domingo: 9:00 a. m. – 5:00 p. m.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cl-btn"><a class="esp-btn" href="https://wa.me/50433255192" target="_blank" rel="noopener"><i class="fa fa-whatsapp" aria-hidden="true"></i>Agenda tu cita</a></div>
+					</div>
+
+					<!-- Comayagua -->
+					<div class="cl-card">
+						<h3>DentCo Comayagua</h3>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Dirección</strong>1.ª avenida NE, entre 3.ª y 4.ª calle NE, barrio El Centro, Comayagua.</div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-phone" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Teléfono</strong><a href="tel:+50498043362">+504 9804-3362</a></div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-whatsapp" aria-hidden="true"></i></span>
+							<div class="txt"><strong>WhatsApp</strong><a href="https://wa.me/50498043362" target="_blank" rel="noopener">+504 9804-3362</a></div>
+						</div>
+						<div class="cl-row">
+							<span class="ico"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+							<div class="txt"><strong>Horario de atención</strong>
+								<ul>
+									<li>Lunes a sábado: 9:00 a. m. – 7:00 p. m.</li>
+									<li>Domingo: 9:00 a. m. – 5:00 p. m.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="cl-btn"><a class="esp-btn" href="https://wa.me/50498043362" target="_blank" rel="noopener"><i class="fa fa-whatsapp" aria-hidden="true"></i>Agenda tu cita</a></div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- 03 · REDES SOCIALES -->
+		<section class="esp-section blanco">
+			<div class="esp-container">
+				<div class="esp-head">
+					<span class="esp-eyebrow">Comunidad</span>
+					<h2 class="esp-title">Síguenos en redes sociales</h2>
+				</div>
+				<div class="rs-grid">
+
+					<div class="rs-card">
+						<h3>DentCo Tegucigalpa</h3>
+						<a class="rs-link" href="https://www.instagram.com/dentco.hn/" target="_blank" rel="noopener">
+							<span class="ico"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span>Instagram<small>@dentco.hn</small></span>
+						</a>
+						<a class="rs-link" href="https://www.facebook.com/p/DentCo-Hn-100083082681604/" target="_blank" rel="noopener">
+							<span class="ico"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+							<span>Facebook<small>DentCo Hn</small></span>
+						</a>
+					</div>
+
+					<div class="rs-card">
+						<h3>DentCo Comayagua</h3>
+						<a class="rs-link" href="https://www.instagram.com/dentcohn.comayagua/" target="_blank" rel="noopener">
+							<span class="ico"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span>Instagram<small>@dentcohn.comayagua</small></span>
+						</a>
+						<a class="rs-link" href="https://www.facebook.com/dentcocomayagua/" target="_blank" rel="noopener">
+							<span class="ico"><i class="fa fa-facebook" aria-hidden="true"></i></span>
+							<span>Facebook<small>DentCo Comayagua</small></span>
+						</a>
+					</div>
+
+					<div class="rs-card">
+						<h3>DentCo Radiodiagnóstico</h3>
+						<a class="rs-link" href="https://www.instagram.com/dentco_rdx.hn/" target="_blank" rel="noopener">
+							<span class="ico"><i class="fa fa-instagram" aria-hidden="true"></i></span>
+							<span>Instagram<small>@dentco_rdx.hn</small></span>
+						</a>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		</div>
+	</div>
+	<!-- END MAIN CONTAINER -->		
+	
+	<!-- FOOTER -->
+	<div class="footer" style="background: #F5F7F9; color: #1c2a48; padding-top: 50px;">
+		<div class="main">
+			<div class="row">
+			  <div class="col-md-7 footer-info">
+				  <div class="about-footer">
+				  	<div class="logo-brand" style="margin-bottom: 20px;"><img src="img/master/logo.png" alt="DentCo Logo"></div>
+				  	<h5 style="color: #1c2a48; font-weight: 700; margin-bottom: 10px;">Cuidamos tu sonrisa en Tegucigalpa y Comayagua.</h5>
+				  	<p style="font-style: italic; color: #4f5b6d; font-size: 13px; line-height: 1.6; margin-bottom: 30px;">
+				  		Señor quiero que estés conmigo todos los días mientras practico la odontología. Que tus tiernas manos guíen las mías mientras atienda a todos los que en mí confían. Que cada paciente sienta mi competencia y habilidad, ya sea por una cirugía compleja o un simple diente a rellenar. Quiero que estés conmigo mientras diagnostico y trato, para que recibas una sonrisa hermosa y saludable de la boca de mis pacientes. Amén.
+				  	</p>
+
+					<div class="footer-location" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Tegucigalpa</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">Ventu Life Center, segundo piso del área comercial, Calle Los Alcaldes, Tegucigalpa, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location">
+						<div class="text-address">
+							<h6 style="color: #1c2a48; font-weight: 700; margin-bottom: 5px;">DentCo Comayagua</h6>
+							<p style="color: #4f5b6d; font-size: 13px; line-height: 1.4;">1ra Avenida NE, entre 3ra y 4ta Calle NE, Barrio El Centro, Comayagua, Honduras.</p>
+						</div>
+					  </div>
+					  <div class="inner-location" style="grid-column: span 2;">
+						<a href="contact.html" style="color: #1c2a48; font-weight: 700; text-decoration: none;">Contáctanos &nearr;</a>
+					  </div>
+				    </div>
+				  </div>
+			 </div>
+				
+			  <div class="col-md-5 footer-maps">
+				<h5 style="color: #1c2a48; font-weight: 700; margin: 0 0 12px;">Encuéntranos</h5>
+				<div class="sedes-tabs" role="tablist" aria-label="Sedes DentCo">
+					<button type="button" class="sedes-tab is-active" role="tab" aria-selected="true" data-sede="tgu">Tegucigalpa</button>
+					<button type="button" class="sedes-tab" role="tab" aria-selected="false" data-sede="cmy">Comayagua</button>
+				</div>
+				<div class="sedes-card">
+					<div class="sedes-map is-active" id="sede-tgu" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Tegucigalpa</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/sbLaZ2fQcTJXcjwT8" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Tegucigalpa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.0596222,-87.2270734%28DentCo%20Tegucigalpa%29&z=17&output=embed"></iframe>
+					</div>
+					<div class="sedes-map" id="sede-cmy" role="tabpanel">
+						<div class="sedes-info">
+							<p><strong>DentCo Comayagua</strong></p>
+							<div class="sedes-links"><a href="https://maps.app.goo.gl/4sSY2R1Kyv7haty47" target="_blank" rel="noopener">Abrir en Google Maps</a></div>
+						</div>
+						<iframe title="Mapa DentCo Comayagua" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=14.4597405,-87.6401733%28DentCo%20Comayagua%29&z=17&output=embed"></iframe>
+					</div>
+				</div>
+			  </div>
+			</div>
+			
+			<div class="bottom-footer" style="border-top: 1px solid rgba(28,42,72,0.12); margin-top: 40px; padding: 20px 0;">
+				<div class="main">
+					<div class="section">
+						<div class="column-left">
+							<p style="color: #5f6b7a; margin: 0; font-size: 12px;">© 2026 Derechos Reservados, DentCo</p>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<a href="#0" class="cd-top">Top</a>
+	
+	<!-- JAVASCRIPTS -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/loader.js"></script>
+	<script src="js/top.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/parallax.js"></script>
+	
+	<script>
+	// Pestañas de sedes (Tegucigalpa / Comayagua)
+	(function(){
+		var tabs=document.querySelectorAll('.sedes-tab');
+		tabs.forEach(function(t){
+			t.addEventListener('click',function(){
+				tabs.forEach(function(x){x.classList.remove('is-active');x.setAttribute('aria-selected','false');});
+				document.querySelectorAll('.sedes-map').forEach(function(m){m.classList.remove('is-active');});
+				t.classList.add('is-active');t.setAttribute('aria-selected','true');
+				document.getElementById('sede-'+t.dataset.sede).classList.add('is-active');
+			});
+		});
+	})();
+	</script>
+</body>
+</html>
